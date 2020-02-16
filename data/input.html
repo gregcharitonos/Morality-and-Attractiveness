@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="input.js"></script>
+  <style>
+    body {
+  background: linear-gradient(#832838,#7c1454);
+  margin:0;
+  color:white;
+  font-family: serif;
+  font-size: 2rem;
+  display: grid;
+  place-items:center;
+  place-content:space-around;
+  grid-template-columns: 1fr 1fr;
+  top:0;
+  left:0;
+  overflow: hidden;
+}
+
+
+#main {
+  display: grid;
+  grid-template-rows:0.89fr 10fr;
+  grid-template-columns:1fr;
+  place-items:space-around;
+  place-content:stretch;
+  text-align: center;
+  width:50vw;
+  height:100vh;
+  max-width: 50vh;
+}
+
+#help {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width:100vw;
+  height:100vh;
+  background: linear-gradient(#be4a5e,#db3e9f);
+  display: grid;
+  place-items:stretch;
+  place-content:space-around;
+  
+}
+
+#controls {
+  background-attachment: fixed;
+  width:50vw;
+  height: 100vh;
+  box-shadow: inherit;
+  opacity: 1;
+  transition: 0.5s all;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  place-items:center;
+  place-content:stretch;
+}
+
+#controls > div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:"label label label";
+}
+#controls > div > label {
+  grid-area: label;
+}
+
+#controls > div > span {
+  font-size: 1rem;
+}
+
+#controls.hidden{
+  opacity: 0;
+}
+
+button {
+  color:inherit;
+  width:100%;
+  padding: 1vh 1vw;
+  border: none;
+  border-radius: 5px;
+  background: hsla(0, 90%, 61%, 0.56);
+  background-attachment: fixed;
+  box-shadow: 0 0 3px 1px black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button.hidden {
+  pointer-events: none;
+}
+
+#photo_wrap{
+  height:59vh;
+  width: 100vw;
+  max-width:50vh;
+  box-shadow: 0 0 3px 1px black inset;
+  z-index: 10;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+#rateWrap {
+  height:auto;
+  margin:1vh 1vw;
+}
+#tag {
+  font-size: 1.2rem;
+  width:95%;
+  height:85%;
+  max-width: 50vh;
+  box-shadow: 0 0 3px 1px black inset;
+  padding: 1vh 1vw;
+  text-align: justify;
+  background: hsla(0, 0%, 0%, 0.18);
+  overflow-y: auto;
+  margin:0 auto;
+}
+
+input[type=range]{
+  margin-left:1vw;
+}
+
+    #controls > .button {
+      display:grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      place-items:center;
+      place-content:center;
+      width:80%;
+      height:80%;
+      background: hsla(0,50%,30%,0.5);
+      border-radius: 5px;
+      box-shadow: 0 1px 2px 0 hsla(0,0%,0%,0.4);
+      transition: background 0.5s;
+      cursor: pointer;
+    }
+    
+    #controls > div{
+      width:80%;
+      height:80%;
+    }
+    #controls > .button[data-selected=true] {
+      box-shadow: 0 1px 2px 0 hsla(0,0%,0%,0.4) inset;
+      background: hsla(0,50%,50%,0.5);
+      border-width: 1px;
+      border-color: #ff90bb;
+      border-style: solid;
+    }
+    
+    #rate {
+      display:grid;
+      grid-template-rows: 10% 90%;
+      text-align: center;
+      place-items:center;
+      place-content:space-around;
+    }
+    
+    #sex {
+      display:grid;
+      place-items:space-around;
+      place-content:center;
+      background: hsla(0,50%,30%,0.5);
+      border-radius: 5px;
+      box-shadow: 0 1px 2px 0 hsla(0,0%,0%,0.4);
+      width:80%;
+      cursor: pointer;
+      transition: background 0.5s;
+    }
+    #sex[data-sex=M]{
+      background: hsl(200,50%,40%,1);
+    }
+    #sex[data-sex=F]{
+      background: hsl(10,50%,40%,1)
+    }
+  </style>
+</head>
+
+<body>
+  <div id="rate">
+    <div id="sex" data-sex="M">MALE</div>
+     <div id="controls">
+        <div class="button" id="befriend" data-selected="false"><label>Befriend</label></div>
+        <div class="button" id="hookup" data-selected="false"><label>Hookup</label></div>
+        <div class="button" id="date" data-selected="false"><label>Date</label></div>
+        <div><button id="next">NEXT</button></div>
+      </div>
+  </div>
+  <div id="main">
+    <div id="photo_wrap">
+    </div>
+    <div id="tag"></div>
+  </div>
+  <div id="help">Loading... Please wait</div>
+</body>
+</html>

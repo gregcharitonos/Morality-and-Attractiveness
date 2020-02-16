@@ -1,0 +1,118 @@
+body {
+  background: linear-gradient(#be4a5e,#db3e9f);
+  margin:0;
+  color:white;
+  font-family: serif;
+  font-size: 2rem;
+  display: grid;
+  place-items:stretch;
+  place-content:space-around;
+}
+
+
+#main {
+  display: grid;
+  grid-template-rows:0.79fr 0.05fr 10fr;
+  grid-template-columns:1fr;
+  place-items:stretch;
+  place-content:space-around;
+  text-align: center;
+  width:100vw;
+  height:100vh;
+  max-width: 50vh;
+}
+
+#help {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 10;
+  width:100vw;
+  height:100vh;
+  background: linear-gradient(#be4a5e,#db3e9f);
+  display: grid;
+  place-items:stretch;
+  place-content:space-around;
+  
+}
+
+#controls {
+  background: linear-gradient(rgba(190, 74, 94, 0.9),rgba(219, 62, 159, 0.9));
+  background-attachment: fixed;
+  width:100%;
+  height: 100%;
+  box-shadow: inherit;
+  opacity: 1;
+  transition: 0.5s all;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  place-items:stretch;
+  place-content:space-around;
+  user-select: none;
+}
+
+#controls > div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:"label label label";
+}
+#controls > div > label {
+  grid-area: label;
+}
+
+#controls > div > span {
+  font-size: 1rem;
+}
+
+#controls.hidden{
+  opacity: 0;
+}
+
+button {
+  color:inherit;
+  width:100%;
+  padding: 1vh 1vw;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(#be4a5e,#db3e9f);
+  background-attachment: fixed;
+  box-shadow: 0 0 3px 1px black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button.hidden {
+  pointer-events: none;
+}
+
+#photo_wrap{
+  height:60vh;
+  width: 100vw;
+  max-width:50vh;
+  box-shadow: 0 0 3px 1px black inset;
+  z-index: 10;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+#rateWrap {
+  height:auto;
+  margin:1vh 1vw;
+}
+#tag {
+  font-size: 1.2rem;
+  width:95%;
+  height:90%;
+  max-width: 50vh;
+  box-shadow: 0 0 3px 1px black inset;
+  padding: 1vh 1vw;
+  text-align: justify;
+  background: hsla(0, 0%, 0%, 0.18);
+  overflow-y: auto;
+  margin:0 auto;
+}
+
+input[type=range]{
+  margin-left:1vw;
+}

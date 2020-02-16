@@ -1,0 +1,168 @@
+body {
+  background: linear-gradient(#be4a5e,#db3e9f);
+  background: linear-gradient(#171616,#4a0f34);
+  margin:0;
+  color:white;
+  font-family: serif;
+  font-size: 2rem;
+  display: grid;
+  place-items:stretch;
+  place-content:space-around;
+  width:100vw;
+  height:100vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+#main {
+  width:49vw;
+  height:49vw;
+  max-height: 95vh;
+  display: grid;
+  align-items: center;
+  justify-items:center;
+  grid-template-areas: 
+    ". hlabel hlabel"
+    "vlabel . .";
+    "vlabel . .";
+  grid-template-rows: 4% 48% 48%;
+  grid-template-columns: 4% 48% 48%;
+  place-items:auto center;
+  place-content:auto space-around;
+}
+
+#hlabel {
+  grid-area: hlabel;
+  width: 100%;
+  height:100%;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content:center;
+  align-content: space-around;
+  text-align: center;
+}
+
+#vlabel {
+  grid-area: vlabel;
+  width:100%;
+  height:100%;
+  grid-row: 2/4;
+  display: grid;
+  align-content: space-around;;
+  justify-content: center;
+  text-align: center;
+}
+
+#hlabel, #vlabel {
+  font-size: 2.5rem;
+}
+
+.square {
+  width:90%;
+  height:95%;
+  display: grid;
+  grid-template-rows:1fr 1fr;
+  background:linear-gradient(135deg,hsla(339, 100%, 34%,0.5),hsl(270, 65%, 17%,0.5));
+  background-attachment: fixed;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 1px rgba(7, 6, 6, 0.4);
+  font-size: 2rem;
+  place-items:center center;
+  place-content:center stretch;
+}
+
+.hot, .not {
+  width:20vmin;
+  height:20vmin;
+  background-position: center;
+  background-size: contain;
+  transition: background-image 0.5s ease-in;
+  display: grid;
+  border-radius: 100%;
+  box-shadow: 0 2px 2px 1px rgba(7, 6, 6, 0.4);
+  
+}
+
+.info {
+  width:100%;
+  height:90%;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-areas: 
+    "."
+    "."
+    "."
+    "."
+    "."
+    ".";
+  grid-template-rows: 0.3fr 1fr 0.3fr 1fr 0.3fr 1fr;
+  text-align: center;
+  align-content: space-around;
+  justify-content: space-around;
+  justify-items:center;
+  place-content:stretch;
+}
+
+.info > label {
+  font-size:1rem;
+}
+
+.progress {
+  width:90%;
+  transition: 1s all;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  display: block;
+}
+.value {
+  background: linear-gradient(90deg,hsl(295, 59%, 37%),hsl(0, 59%, 46%));
+  height: 100%;
+  width:100%;
+  transition: 1s all ease-out;
+  border-radius: inherit;
+}
+
+#stats {
+  width:49vw;
+  height:49vw;
+  max-height: 98vh;
+  display:grid;
+  grid-auto-rows: 5% 95%;
+}
+
+#stats > span {
+  text-align: center;
+}
+
+#canvas {
+  width:100%;
+  height:100%;
+  max-height: 95vh;
+}
+
+#title {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#male {
+  color:hsl(200,50%,50%)
+}
+#female {
+  color:hsl(0,50%,50%)
+}
+
+#male::after{
+  content:"% male"
+}
+#female::after{
+  content:"% female"
+}
+#cat {
+  font-size: 2.5rem;
+}
+
+.value {background-size: 100% 100%}

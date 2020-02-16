@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="main">
+    <div id="photo_wrap">
+      <div id="controls" class="hidden">
+        <div><label>Befriend</label><span>not at all</span><input name="befriend" type="range" min="-2" max="2" value="0" list="marks"><span>very much</span></div>
+        <div><label>Hookup</label><span>not at all</span><input name="hookup" type="range" min="-2" max="2" value="0" list="marks"><span>very much</span></div>
+        <div><label>Date</label><span>not at all</span><input name="date" type="range" min="-2" max="2" value="0" list="marks"><span>very much</span></div>
+        <div><button class="hidden" id="next">NEXT</button></div>
+        <datalist id="marks">
+          <option value="-2" label="not at all"></option>
+          <option value="-1" label="-1"></option>
+          <option value="0" label="0"></option>
+          <option value="1" label="1"></option>
+          <option value="2" label="very much"></option>
+        </datalist>
+      </div>
+    </div>
+    <div id="rateWrap"><button id="showCon">RATE</button></div>
+    <div id="tag"></div>
+  </div>
+  <div id="help">Loading... Please wait</div>
+</body>
+</html>
